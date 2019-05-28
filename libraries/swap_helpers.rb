@@ -102,7 +102,7 @@ module SwapCookbook
     end
 
     def compatible_filesystem?
-      compatible_filesystems = %w(xfs ext4)
+      compatible_filesystems = %w(ext4)
       parent_directory = ::File.dirname(new_resource.path)
       # Get FS info, get second line as first is column headings
       command = "df -PT #{parent_directory} | awk 'NR==2 {print $2}'"
